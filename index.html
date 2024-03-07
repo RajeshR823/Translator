@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6.3.1/dist/tippy.css">
+   <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.1/dist/tippy.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+  
+    <link rel="stylesheet" href="style.css" />
+    <title>Translate Sphere</title>
+    <link rel="icon" type="image/x-icon" href="translate.png">
+  </head>
+  <body>
+    <div class="container">
+      <div class="card input-wrapper">
+        <div class="from">
+          <span class="heading">From :</span>
+          <div class="dropdown-container" id="input-language">
+            <div class="dropdown-toggle">
+              <ion-icon name="globe-outline"></ion-icon>
+              <span class="selected" data-value="auto">Auto Detect</span>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <ul class="dropdown-menu">
+              <li class="option active">DropDown Menu Item 1</li>
+              <li class="option">DropDown Menu Item 2</li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-area">
+          <textarea
+            id="input-text"
+            cols="30"
+            rows="14"
+            placeholder="Enter Here"
+          ></textarea>
+          <div class="chars"><span id="input-chars">0</span> / 10000</div>
+        </div> 
+        <div class="text-area">
+       
+          <div class="chars"><span id="input-chars"></div>
+         <button id="text-to-speech-btn" class="speech-btn">
+          <ion-icon name="volume-high-outline"></ion-icon>
+          </button>
+          <button id="start-speech-btn" class="speech-btn">
+            <ion-icon name="mic-outline"></ion-icon>
+          </button>
+          <button id="refresh-btn" class="speech-btn">
+            <ion-icon name="refresh-outline"></ion-icon>
+          </button>
+          <button id="paste-btn" class="speech-btn">
+            <ion-icon name="clipboard-outline"></ion-icon>
+          </button>
+          <label for="upload-document">
+            <button id="upload-btn" class="speech-btn">
+              <ion-icon name="cloud-upload-outline"></ion-icon> 
+            </button>
+            <input type="file" id="upload-document" accept=".pdf,.doc,.docx,.txt" hidden />
+          </label>
+        </div>
+      </div>
+      <div class="center">
+        <div class="swap-position">
+          <ion-icon name="swap-horizontal-outline"></ion-icon>
+        </div>
+      </div>
+      <div class="card output-wrapper">
+        <div class="to">
+          <span class="heading">To :</span>
+          <div class="dropdown-container" id="output-language">
+            <div class="dropdown-toggle">
+              <ion-icon name="globe-outline"></ion-icon>
+              <span class="selected" data-value="en">English</span>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <ul class="dropdown-menu">
+              <li class="option active">DropDown Menu Item 1</li>
+              <li class="option">DropDown Menu Item 2</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+        <textarea
+          id="output-text"
+          cols="30"
+          rows="14"
+          placeholder=""
+          disabled>
+        </textarea>
+          <div class="text-area">
+          <button id="Output-text-to-speech-btn" class="speech-btn">
+            <ion-icon name="volume-high-outline"></ion-icon>
+            <button id="copy-button" class="speech-btn">
+              <ion-icon name="copy-outline"></ion-icon>            
+            </button>
+            </button>
+            <button id="download-btn" class="speech-btn">            
+              <ion-icon name="cloud-download-outline"></ion-icon>
+            </button>
+        </textarea>
+        </div>     
+        </div>
+      </div>
+        <div class="card mean-wrapper">       
+            <div id="mean-text" class="card-synonyms-wrapper">          
+              <div class="synonyms-title">
+                <div id="Dictionary" class="dictionary-result"></div>
+              </div>
+              <div class="synonyms-list">
+              </div>             
+            </div>
+            <div id="imageOutput"></div>
+           
+           </div>
+        </div>
+</body>
+
+    <script src="languages.js"></script>
+    <script src="script.js"></script>
+
+</html>
